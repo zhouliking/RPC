@@ -22,7 +22,6 @@ public class RandomLoadBalance implements LoadBalance {
 		weightMap.put("127.0.0.4:8000", 7);
 	}
 
-	@Override
 	public String selectOneServer(List<String> servers) {
 		int length = servers.size();
 		boolean sameWeight = true;//所有server权重均一样，为true

@@ -9,9 +9,8 @@ import java.util.List;
 */
 public class LeastActionLoadBalance  implements LoadBalance{
 
-	@Override
 	public String selectOneServer(List<String> servers) {
-	
+		// TODO Auto-generated method stub
 		return null;
 	}
 

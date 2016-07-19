@@ -13,7 +13,6 @@ public class RoundRobinLoadBalance implements LoadBalance{
 
 	private static int next = 0;
 	
-	@Override
 	public String selectOneServer(List<String> servers) {
 		synchronized(this){
 			return servers.get(next++ % servers.size());
