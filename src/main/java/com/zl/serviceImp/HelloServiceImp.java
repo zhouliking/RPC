@@ -1,6 +1,6 @@
 package com.zl.serviceImp;
 
-import com.innotation.RpcService;
+import com.zl.innotation.RpcService;
 import com.zl.interfaces.HelloService;
 
 @RpcService(HelloService.class) // ָ��Զ�̽ӿ�
