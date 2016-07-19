@@ -13,7 +13,7 @@ import org.apache.zookeeper.ZooKeeper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.constant.Constant;
+import com.zl.constant.Constant;
 
 /**
  * ServiceRegistry：服务端注册服务到zookeeper 

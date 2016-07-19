@@ -1,4 +1,4 @@
-package com.constant;
+package com.zl.constant;
 /**
  * Constant:定义需要使用的常用
  * @author 周力

@@ -8,8 +8,8 @@ import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
 
+import com.zl.constant.Constant;
 import com.zl.loadBalanceStrategy.LoadBalance;
-import com.constant.Constant;
 
 public class ServiceDiscovery {
 
