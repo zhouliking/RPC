@@ -8,7 +8,7 @@ public class SerializationUtil {
 	private static SerializeInterface serializeStrategy;
 	
 	public SerializationUtil(SerializeInterface serialize){
-		this.serializeStrategy = serialize;
+		serializeStrategy = serialize;
 	}
 	
 	public static <T> byte[] serialize(T obj) {			
