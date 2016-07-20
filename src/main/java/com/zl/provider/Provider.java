@@ -32,7 +32,6 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 public class Provider implements ApplicationContextAware, InitializingBean {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Provider.class);
-
     private String serverAddress;
     private ServiceRegistry serviceRegistry;
 
