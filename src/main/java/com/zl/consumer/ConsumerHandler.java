@@ -21,7 +21,7 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
 /** 
-* RPC 客户端
+* 服务消费端
 * @author 周力 
 */
 public class ConsumerHandler extends SimpleChannelInboundHandler<RpcResponse> {

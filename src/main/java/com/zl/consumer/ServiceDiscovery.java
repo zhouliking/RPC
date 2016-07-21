@@ -10,7 +10,10 @@ import org.apache.zookeeper.ZooKeeper;
 
 import com.zl.constant.Constant;
 import com.zl.loadBalanceStrategy.LoadBalance;
-
+/** 
+* 服务消费端：服务发现
+* @author 周力 
+*/
 public class ServiceDiscovery {
 
 	private CountDownLatch latch;

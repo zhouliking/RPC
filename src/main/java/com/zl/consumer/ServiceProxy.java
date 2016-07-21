@@ -8,7 +8,10 @@ import java.util.UUID;
 
 import com.zl.common.RpcRequest;
 import com.zl.common.RpcResponse;
-
+/** 
+* 服务消费端：服务代理对象
+* @author 周力 
+*/
 public class ServiceProxy {
 	private String serverAddress;
     private ServiceDiscovery serviceDiscovery;
