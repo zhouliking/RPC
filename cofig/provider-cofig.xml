@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 配置服务注册组件 -->
+    <bean id="serviceRegistry" class="com.zl.provider.ServiceRegistry">
+        <constructor-arg name="registryAddress" value="127.0.0.0:2181"/>
+    </bean>
+
+    <!--RPC Provider -->
+    <bean id="provider" class="com.zl.provider.ServiceRegistry">
+        <constructor-arg name="serverAddress" value="127.0.0.1:8000}"/>
+        <constructor-arg name="serviceRegistry" ref="serviceRegistry"/>
+    </bean>
+    
+    <!--配置RPC序列化方式 -->
+    <bean id="protostuffSerialize" class="com.zl.serialize.ProtostuffSerialize">
+    </bean>
+    <bean id="serializationUtil" class="com.zl.serialize.SerializationUtil">
+        <constructor-arg name="serializeStrategy" ref="protostuffSerialize"/>
+    </bean>
+    
+    
+</beans>
