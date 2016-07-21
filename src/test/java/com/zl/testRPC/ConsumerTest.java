@@ -18,7 +18,8 @@ public class ConsumerTest  {
     public void helloTest() {
 		new ClassPathXmlApplicationContext("consumer-cofig.xml");
         HelloService helloService = serviceProxy.create(HelloService.class);
-        String result = helloService.hello("World");
+        String result = helloService.hello("World");        
+        
         Assert.assertEquals("Hello! World", result);
     }
 }
