@@ -6,7 +6,6 @@ import java.io.Serializable;
  * RpcResponse；RPC响应对象
  * @author 周力
  */
-
 public class RpcResponse implements Serializable{
 	
 	/**
