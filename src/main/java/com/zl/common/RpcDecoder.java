@@ -9,7 +9,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
 
 /**
- * 定义注解，便于spring扫描
+ * 
  * @author 周力
  */
 public class RpcDecoder extends ByteToMessageDecoder {

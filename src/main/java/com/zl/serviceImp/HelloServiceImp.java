@@ -8,7 +8,6 @@ import com.zl.interfaces.HelloService;
  */
 @RpcService(HelloService.class) 
 public class HelloServiceImp implements HelloService   {
-
 	public String hello(String name) {
 		return "Hello " + name;
 	}

@@ -41,7 +41,6 @@ public class JdkSerialize implements SerializeInterface {
 		
 		try {
 			ois = new ObjectInputStream(bis);
-			
 			return (T) ois.readObject();
 		} catch (IOException e) {
 			e.printStackTrace();

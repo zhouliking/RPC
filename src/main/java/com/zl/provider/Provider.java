@@ -26,7 +26,8 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 /**
- * RpcServer：spring启动后，扫描spring容器中，带指定注解(RpcService)的bean
+ * RpcServer：spring启动后，扫描spring容器中，带指定注解(RpcService)的bean,
+ * 并在初始化bean后，开启服务端，并注册服务
  * @author 周力
  */
 public class Provider implements ApplicationContextAware, InitializingBean {
