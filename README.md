@@ -14,6 +14,19 @@ This is a simple implementation of RPC(Remote Procedure Call)  protocol. It can 
 - Hessian
 
 ---
+##Configurable of features
+
+###Load balancing strategy
+- Random LoadBalance
+- RoundRobin LoadBalance（按权重轮询）
+- LeastActive LoadBalance
+
+###Serialization
+- JDK native serialization
+- Hessian
+- Protostuff
+
+---
 ##Other Similar projects
 - Dubbo
 - Thirft
