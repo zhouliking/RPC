@@ -16,12 +16,12 @@ This is a simple implementation of RPC(Remote Procedure Call)  protocol. It can 
 ---
 ##Configurable of features
 
-###Load balancing strategy
+1. Load balancing strategy
 - Random LoadBalance
 - RoundRobin LoadBalance（按权重轮询）
 - LeastActive LoadBalance
 
-###Serialization
+2. Serialization
 - JDK native serialization
 - Hessian
 - Protostuff
