@@ -68,25 +68,25 @@
 			<version>4.0.38</version>
 		</dependency>
 
-		<!-- SLF4J -->
+		<!-- slf4j -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.7.7</version>
 		</dependency>
 
-		<!-- Objenesis -->
+		<!-- Objenesis 
 		<dependency>
 			<groupId>org.objenesis</groupId>
 			<artifactId>objenesis</artifactId>
 			<version>2.1</version>
-		</dependency>
+		</dependency>-->
 
-		<!-- CGLib -->
+		<!-- CGLib 
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
 			<version>3.1</version>
-		</dependency>
+		</dependency>-->
 	</dependencies>
 </project>
