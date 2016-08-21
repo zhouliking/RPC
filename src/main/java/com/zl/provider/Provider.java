@@ -78,6 +78,12 @@ public class Provider implements ApplicationContextAware, InitializingBean {
                 .option(ChannelOption.SO_BACKLOG, 128)
                 .childOption(ChannelOption.SO_KEEPALIVE, true);
 
+            
+            if (serviceRegistry != null) {
+            	for(String interfaceName:handlerMap.keySet()){
+            		serviceRegistry.register(interfaceName,serverAddress); // 注册服务地址
+            	}                
+            }
             String[] array = serverAddress.split(":");
             String host = array[0];
             int port = Integer.parseInt(array[1]);
@@ -85,13 +91,7 @@ public class Provider implements ApplicationContextAware, InitializingBean {
             ChannelFuture future = bootstrap.bind(host, port).sync();
             LOGGER.debug("server started on port {}", port);
 
-            if (serviceRegistry != null) {
-            	for(String interfaceName:handlerMap.keySet()){
-            		serviceRegistry.register(interfaceName,serverAddress); // 注册服务地址
-            	}
-                
-            }
-
+            
             future.channel().closeFuture().sync();
         } finally {
             workerGroup.shutdownGracefully();
