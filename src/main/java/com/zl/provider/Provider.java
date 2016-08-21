@@ -72,7 +72,7 @@ public class Provider implements ApplicationContextAware, InitializingBean {
                         channel.pipeline()
                             .addLast(new RpcDecoder(RpcRequest.class)) 
                             .addLast(new RpcEncoder(RpcResponse.class)) 
-                            .addLast(new RpcHandler()); 
+                            .addLast(new RpcHandler(handlerMap));//handlerMap传给服务提供者，直接调用对象 
                     }
                 })
                 .option(ChannelOption.SO_BACKLOG, 128)
