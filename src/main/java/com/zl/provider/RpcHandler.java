@@ -13,7 +13,7 @@ import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 /**
-*
+* 处理Request请求,并调用服务方法，将结果,封装成Response对象，发送给消费者
 * @author 周力
 */
 public class RpcHandler extends SimpleChannelInboundHandler<RpcRequest> {
@@ -48,20 +48,20 @@ public class RpcHandler extends SimpleChannelInboundHandler<RpcRequest> {
         Class<?>[] parameterTypes = request.getParameterTypes();
         Object[] parameters = request.getParameters();
 
-        //CGLib 提供的反射 API，的FastClass与FastMethod。为了避免使用 Java 反射带来的性能问题
+        //方式1，直接用java的反射获取结果
         Method method = serviceClass.getMethod(methodName, parameterTypes);
         method.setAccessible(true);
         return method.invoke(serviceBean, parameters);
 
-        //
+        //方式2：CGLib 提供的反射 API，的FastClass与FastMethod。为了避免使用 Java 反射带来的性能问题
         /*FastClass serviceFastClass = FastClass.create(serviceClass);
         FastMethod serviceFastMethod = serviceFastClass.getMethod(methodName, parameterTypes);
         return serviceFastMethod.invoke(serviceBean, parameters);*/
     }
-//
-//    @Override
-//    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
-//        LOGGER.error("server caught exception", cause);
-//        ctx.close();
-//    }
+
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
+        LOGGER.error("server caught exception", cause);
+        ctx.close();
+    }
 }
