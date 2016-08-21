@@ -86,7 +86,10 @@ public class Provider implements ApplicationContextAware, InitializingBean {
             LOGGER.debug("server started on port {}", port);
 
             if (serviceRegistry != null) {
-                serviceRegistry.register(serverAddress); // 注册服务地址
+            	for(String interfaceName:handlerMap.keySet()){
+            		serviceRegistry.register(interfaceName,serverAddress); // 注册服务地址
+            	}
+                
             }
 
             future.channel().closeFuture().sync();

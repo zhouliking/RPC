@@ -10,18 +10,19 @@ import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooDefs;
 import org.apache.zookeeper.ZooKeeper;
+import org.apache.zookeeper.data.Stat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.zl.constant.Constant;
 
 /**
- * ServiceRegistry：服务端注册服务到zookeeper 
- * 服务端创建临时节点到zookeeper 
+ * ServiceRegistry：服务端注册服务到zookeeper 服务端创建临时节点到zookeeper
+ * 
  * @author 周力
  */
 public class ServiceRegistry {
-	
+
 	private static final Logger LOGGER = LoggerFactory.getLogger(ServiceRegistry.class);
 
 	private CountDownLatch latch = new CountDownLatch(1);
@@ -32,12 +33,17 @@ public class ServiceRegistry {
 		this.registryAddress = registryAddress;
 	}
 
-	public void register(String data) {
-		if (data != null) {
+	public void register(String service, String address) {
+		try {
 			ZooKeeper zk = connectServer();
-			if (zk != null) {
-				createNode(zk, data);
+			System.out.println(zk);
+			Stat stat = zk.exists(Constant.ZK_DATA_PATH + "/" + service, false);
+			if (stat == null) {
+				createNode(zk, service);
 			}
+			createNode(zk, service + "/" + address);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
