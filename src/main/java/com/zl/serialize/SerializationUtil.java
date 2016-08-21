@@ -1,7 +1,7 @@
 package com.zl.serialize;
 
 /**
- * 
+ * 序列化工具类，方法均为静态的
  * @author 周力
  */
 public class SerializationUtil {
