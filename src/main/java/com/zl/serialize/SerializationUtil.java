@@ -23,12 +23,5 @@ public class SerializationUtil {
 			throw new NullPointerException();
 		}
 		return serializeStrategy.deserialize(bytes,clazz);
-	}
-
-	// /*
-	// * Objenesis 不用反射创建
-	// */
-	// private static Map<Class<?>, Schema<?>> cachedSchema = new
-	// T message = (T) objenesis.newInstance(cls); //用objenesis创建对象	
-	// }
+	}	
 }
