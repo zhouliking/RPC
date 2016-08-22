@@ -14,7 +14,7 @@
 	<bean id="serviceDiscovery" class="com.zl.consumer.ServiceDiscovery">
 		<constructor-arg name="registryAddress" value="127.0.0.0:2181" />
 		<constructor-arg name="service" value="com.zl.interfaces.HelloService" />
-		<constructor-arg name="strategy" value="randomLoadBalance" />
+		<constructor-arg name="strategy" ref="randomLoadBalance" />
 	</bean>
 
 	<!-- 配置RPC代理 -->
