@@ -28,6 +28,7 @@ This is a simple implementation of RPC(Remote Procedure Call)  protocol. It can 
 
 ---
 ##Other Similar projects
-- Dubbo
-- Thirft
+- gRPC （Google）
+- Thirft （Facebook）
+- Dubbo   （alibaba）
 - Hessian
